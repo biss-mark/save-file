@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: #000;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #eee;
+    padding: 20px;
+}
+
+.container {
+    max-width: 350px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    background: #fff;
+}
+
+.file-info {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file {
+    width: 100%;
+}
+
+.file input,
+.file select {
+    border: 1px solid #000;
+    border-radius: 4px;
+    outline: none;
+    padding: 10px;
+    margin-top: 5px;
+    background: none;
+    width: 100%;
+}
+.file input::placeholder, textarea::placeholder {
+    color: #111;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 4px;
+    outline: none;
+    height: 200px;
+    padding: 10px;
+    background: none;
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+    width: 0;
+}
+
+.saveFile {
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    background: #8063CE;
+    color: #fff;
+    cursor: pointer;
+}
+
+.info {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    max-width: 200px;
+    width: 100%;
+    opacity: 0;
+    transition: all .3s;
+    padding: 10px;
+    background: #fff;
+    border-radius: 3px;
+    text-align: center;
+    transform: translateX(0px);
+}
+
+.info.appear {
+    transform: translateX(-35px);
+    opacity: 1;
+}
+
+.info.disappear {
+    opacity: 0;
+}
+
+.info.success {
+    border-left: 2px solid green;
+    color: green;
+}
+.info.danger {
+    border-left: 2px solid #da3f3f;
+    color: #da3f3f;
+}
