@@ -1,8 +1,12 @@
 function saveAsFile() {
-    const nameFile = document.querySelector('#name-file').value;
-    const typeFile = document.querySelector('#type-file').value;
-    const textFile = document.querySelector('#text-file').value;
+    const nameInput = document.querySelector('#name-file');
+    const typeInput = document.querySelector('#type-file');
+    const textInput = document.querySelector('#text-file');
     const info = document.querySelector('.info');
+
+    const nameFile = nameInput.value;
+    const typeFile = typeInput.value;
+    const textFile = textInput.value;
 
     info.classList.add('disappear');
 
@@ -31,18 +35,22 @@ function saveAsFile() {
     console.log(link.download);
     link.click();
 
+    nameInput.value = "";
+    textInput.value = "";
+
     info.innerHTML = "Fichier Téléchargé avec succes"
     setTimeout(() => {
         info.classList.add('success');
         info.classList.remove('disappear');
         info.classList.add('appear');
 
+        setTimeout(() => {
+            info.classList.remove('success');
+            info.classList.add('disappear');
+            info.classList.remove('appear');
+        }, 2500);
     }, 3000);
-    setTimeout(() => {
-        info.classList.remove('success');
-        info.classList.add('disappear');
-        info.classList.remove('appear');
-    }, 2500);
+
 
     URL.revokeObjectURL(link.href);
 }
