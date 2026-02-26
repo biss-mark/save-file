@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save file</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.3/jspdf.umd.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -16,25 +17,24 @@
             <div class="file">
                 <label for="type-file">Type de fichier</label>
                 <select id="type-file">
-                    <option value="txt">Fichier text</option>
-                    <option value="docx">Fichier word</option>
-                    <option value="html">Fichier html</option>
-                    <option value="css">Fichier css</option>
-                    <option value="js">Fichier javaScript</option>
-                    <option value=".md">Fichier markdown</option>
-                    <option value=".log">Fichier journal</option>
-                    <option value=".json">Fichier JSON</option>
-                    <option value=".xml">donnée XML</option>
-                    <option value=".php">fichier PHP</option>
-                    <option value=".ts">fichier typeScript</option>
-                    <option value=".svg">fichier svg</option>
-                    <option value=".pptx">fichier PPT</option>
+                    <option value="text/plain">Fichier text (.txt)</option>
+                    <option value="application/msword">Fichier word (.doc)</option>
+                    <option value="text/html">Fichier html (.html)</option>
+                    <option value="text/css">Fichier css (.css)</option>
+                    <option value="text/javascript">Fichier javaScript (.js)</option>
+                    <option value="text/markdown">Fichier markdown (.md)</option>
+                    <option value="application/json">Fichier JSON (.json)</option>
+                    <option value="application/xml">donnée XML (.xml)</option>
+                    <option value="application/x-httpd-php">fichier PHP (.php)</option>
+                    <option value="application/typescript">fichier typeScript (.ts)</option>
+                    <option value="application/vnd.ms-powerpoint">fichier PPT (.ppt)</option>
+                    <option value="application/pdf">fichier PPT (.PDF)</option>
                 </select>
             </div>
         </div>
         <textarea id="text-file" placeholder="Contenu du fichier"></textarea>
 
-        <button onclick="saveAsFile()" class="saveFile">Enregistrer le fichier</button>
+        <button onclick="saveAsFile()" class="saveFile">Télécharger le fichier</button>
     </div>
 
     <div class="info">info success</div>
